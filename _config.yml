@@ -22,7 +22,7 @@ plugins:
 
 # Site settings
 url: 'https://j23414.github.io/test_alembic_jekyll/'
-baseurl: 'https://j23414.github.io/test_alembic_jekyll/'
+baseurl: '/test_alembic_jekyll/'
 title: 'My website'
 description: 'This is my new website'
 permalink: pretty
