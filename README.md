@@ -1,6 +1,8 @@
 # Checking on Jekyll
 
-Debugging a jekyll site
+Debugging a jekyll site which built fine before Dec 4th 2020 and was broken afterward.
+
+Here, I'm using the same theme to build a blank website. To make sure I understand how this template works to debug the other site.
 
 ```
 wget https://github.com/daviddarnes/alembic-kit/archive/remote-theme.zip
@@ -24,6 +26,32 @@ ls alembic-kit-remote-theme/*
 
 Checking on the file and folder organization
 
-Hmm... is this theme live? I'm not seing the formatting. Is there a css linking error?
+Within `_config.yml`, under "Site settings", fill in values for the `url` and the `base url`
 
-[live website](https://j23414.github.io/test_alembic_jekyll/)
+```
+# Site settings
+url: 'https://j23414.github.io/test_alembic_jekyll/'
+baseurl: '/test_alembic_jekyll/'
+```
+
+This will allow proper linking of the website stylesheets.
+
+[View live website](https://j23414.github.io/test_alembic_jekyll/)
+
+![](screenshot.png)
+
+Works, awesome!
+
+**Solution:** The following change fixed the original broken jekyl site. We needed to point to the "main" branch (by default it looks for "master" branch).
+
+In `_config.yml` change from:
+
+```
+remote_theme: daviddarnes/alembic
+```
+
+to 
+
+```
+remote_theme: daviddarnes/alembic@main
+```
